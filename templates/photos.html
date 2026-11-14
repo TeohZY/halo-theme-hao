@@ -33,7 +33,7 @@
                                     </div>
                                     <div class="banner-button-group">
                                         <a class="banner-button" target="_blank"
-                                           th:attr="onclick='pjax.loadUrl(\''+ ${theme.config.photos.topLink} +'\')'">
+                                           th:attr="data-url=${theme.config.photos.topLink}" onclick="javascript:if(this.dataset.url)pjax.loadUrl(this.dataset.url)">
                                             <i class="haofont hao-icon-circle-arrow-right"></i>
                                             <span class="banner-button-text" th:text="返回"></span>
                                         </a>
@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="banner-button-group">
                                     <a class="banner-button" target="_blank"
-                                       th:attr="onclick='pjax.loadUrl(\''+ ${theme.config.photos.topLink} +'\')'">
+                                       th:attr="data-url=${theme.config.photos.topLink}" onclick="javascript:if(this.dataset.url)pjax.loadUrl(this.dataset.url)">
                                         <i class="haofont hao-icon-circle-arrow-right"></i>
                                         <span class="banner-button-text" th:text="返回"></span>
                                     </a>

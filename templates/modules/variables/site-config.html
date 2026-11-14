@@ -32,8 +32,8 @@
             cht_to_chs: "你已切换为简体",
             day_to_night: "你已切换为深色模式",
             night_to_day: "你已切换为浅色模式",
-            bgLight: "[(${theme.config.style.themeLightSkin})]",
-            bgDark: "[(${theme.config.style.themeDarkSkin})]",
+            bgLight: [[${theme.config.style.themeLightSkin ?: ''}]],
+            bgDark: [[${theme.config.style.themeDarkSkin ?: ''}]],
             position: "top-center",
         },
         translate: {
@@ -77,7 +77,7 @@
                 use: [[${theme.config.comments.use}]],
                 maxBarrage: [[${ theme.config.comments.commentBarrageConfig.maxBarrage }]],
                 barrageTime: [[${ theme.config.comments.commentBarrageConfig.barrageTime }]],
-                mailMd5: "[(${theme.config.comments.commentBarrageConfig.mailMd5})]",
+                mailMd5: [[${theme.config.comments.commentBarrageConfig.mailMd5 ?: ''}]],
                 lazyload: [[${theme.config.comments.lazyload}]],
                 textarea: [[${ theme.config.comments.use == 'Twikoo' ? 'el-textarea__inner' :
                                    theme.config.comments.use == 'Artalk' ? 'atk-textarea' :
@@ -96,30 +96,30 @@
                                     #strings.isEmpty(post.status.excerpt) ? '请填写文章摘要' : post.status.excerpt  }]],
                 randomNum: [[${theme.config.post.aiDescription.randomNum}]],
                 basicWordCount: [[${theme.config.post.aiDescription.basicWordCount}]],
-                btnLink: "[(${theme.config.post.aiDescription.btnLink})]",
-                gptName: "[(${theme.config.post.aiDescription.gptName})]",
+                btnLink: [[${theme.config.post.aiDescription.btnLink ?: ''}]],
+                gptName: [[${theme.config.post.aiDescription.gptName ?: ''}]],
                 modeName: [[${theme.config.post.aiDescription.mode}]],
                 switchBtn: [[${theme.config.post.aiDescription.switchBtn}]],
-                keys: "[(${theme.config.post.aiDescription.key})]",
-                Referers: "[(${theme.config.post.aiDescription.Referer})]",
+                keys: [[${theme.config.post.aiDescription.key ?: ''}]],
+                Referers: [[${theme.config.post.aiDescription.Referer ?: ''}]],
             },
             img: {
                 src: [[${isLazyload ? 'data-lazy-src' : 'src' }]]
             },
             twikoo: {
                 js: [[${not #strings.isEmpty(theme.config.comments.twikoos.js) ? theme.config.comments.twikoos.js : assets_link +'/libs/twikoo/twikoo.all.min.js' }]],
-                twikooUrl: "[(${theme.config.comments.twikoos.envId})]",
-                accessToken: "[(${theme.config.comments.twikoos.accessToken})]",
+                twikooUrl: [[${theme.config.comments.twikoos.envId ?: ''}]],
+                accessToken: [[${theme.config.comments.twikoos.accessToken ?: ''}]],
             },
             artalk: {
                 js: [[${not #strings.isEmpty(theme.config.comments.artalks.artalkJs) ? theme.config.comments.artalks.artalkJs : assets_link +'/libs/artalk/Artalk.js' }]],
                 css: [[${not #strings.isEmpty(theme.config.comments.artalks.artalkCss) ? theme.config.comments.artalks.artalkCss : assets_link +'/libs/artalk/Artalk.css' }]],
-                artalkUrl: "[(${theme.config.comments.artalks.server})]",
-                siteName: "[(${theme.config.comments.artalks.siteName})]",
+                artalkUrl: [[${theme.config.comments.artalks.server ?: ''}]],
+                siteName: [[${theme.config.comments.artalks.siteName ?: ''}]],
             },
             waline: {
                 js: [[${not #strings.isEmpty(theme.config.comments.walines.walinesJs) ? theme.config.comments.walines.walinesJs : 'https://cdn.cbd.int/@waline/client@2.15.7/dist/waline.js' }]],
-                serverURL: "[(${theme.config.comments.walines.serverURL})]",
+                serverURL: [[${theme.config.comments.walines.serverURL ?: ''}]],
                 locale: [[${not #strings.isEmpty(theme.config.comments.walines.locale) ? theme.config.comments.walines.locale : '' }]]
             },
             footer: {

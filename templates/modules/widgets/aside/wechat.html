@@ -1,6 +1,6 @@
 <div class="card-widget heo-right-widget" id="card-wechat"
 th:with="faceImg = ${theme.config.sidebar.wechat.wechatImgFace}, backImg=${theme.config.sidebar.wechat.wechatImgBack}"
-     th:attr="onclick='javascript:window.open(\''+ ${theme.config.sidebar.wechat.url} +'\')'">
+     th:attr="data-url=${theme.config.sidebar.wechat.url}" onclick="javascript:if(this.dataset.url)window.open(this.dataset.url)">
     <div id="flip-wrapper">
         <div id="flip-content">
             <div class="face"

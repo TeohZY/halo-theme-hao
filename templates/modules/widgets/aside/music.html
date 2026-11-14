@@ -3,7 +3,7 @@
     <div class="item-headline-music"><i class="haofont hao-icon-music"></i><span>音乐天地</span></div>
 
     <div class="card-widget card-music"
-         th:attr="onclick='javascript:window.open(\''+ ${theme.config.sidebar.music.musicUrl} +'\')'">
+         th:attr="data-url=${theme.config.sidebar.music.musicUrl}" onclick="javascript:if(this.dataset.url)window.open(this.dataset.url)">
         <div id="flip-wrapper-card">
             <div id="flip-music">
                 <div class="msimg"
