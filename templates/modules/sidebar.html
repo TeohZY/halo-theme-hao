@@ -53,8 +53,8 @@
                                                th:class="${#annotations.getOrDefault(childMenu, 'icon', '')}"></i>
                                         </th:block>
                                         <th:block th:if="${theme.config.nav.menus.enable_ali_iconfont_symbol_header}">
-                                            <svg class="ali_icon" aria-hidden="true">
-                                                <use th:href="${#annotations.getOrDefault(childMenu, 'icon','jiewen joe-icon-zuzhijiagou')}"></use>
+                                            <svg class="ali_icon" aria-hidden="true" th:if="${#annotations.getOrDefault(childMenu, 'icon', '') != ''}">
+                                                <use th:href="${#annotations.getOrDefault(childMenu, 'icon', '')}"></use>
                                             </svg>
                                         </th:block>
                                         <span th:text="${childMenu.status.displayName}"></span>

@@ -8,8 +8,8 @@
                 <a class="site-page child" th:target="${childMenu.spec.target?.value}"
                    th:href="@{${childMenu.status.href}}">
                     <th:block th:if="${theme.config.nav.menus.enable_ali_iconfont_symbol_header}">
-                        <svg class="ali_icon" aria-hidden="true">
-                            <use th:href="${#annotations.getOrDefault(childMenu, 'icon','jiewen joe-icon-zuzhijiagou')}"></use>
+                        <svg class="ali_icon" aria-hidden="true" th:if="${#annotations.getOrDefault(childMenu, 'icon', '') != ''}">
+                            <use th:href="${#annotations.getOrDefault(childMenu, 'icon', '')}"></use>
                         </svg>
                     </th:block>
                     <th:block th:if="${!theme.config.nav.menus.enable_ali_iconfont_symbol_header}">
@@ -40,8 +40,8 @@
                th:target="${menuItem.spec.target?.value}"
                th:href="@{${menuItem.status.href}}">
                 <th:block th:if="${theme.config.nav.menus.enable_ali_iconfont_symbol_header}">
-                    <svg class="ali_icon" aria-hidden="true">
-                        <use th:href="${#annotations.getOrDefault(menuItem, 'icon','jiewen joe-icon-zuzhijiagou')}"></use>
+                    <svg class="ali_icon" aria-hidden="true" th:if="${#annotations.getOrDefault(menuItem, 'icon', '') != ''}">
+                        <use th:href="${#annotations.getOrDefault(menuItem, 'icon', '')}"></use>
                     </svg>
                 </th:block>
                 <span th:text="${menuItem.status.displayName}"></span>
@@ -49,8 +49,8 @@
             
             <a th:if="${not #lists.isEmpty(menuItem.children)}" class="site-page" rel="external nofollow">
                 <th:block th:if="${theme.config.nav.menus.enable_ali_iconfont_symbol_header}">
-                    <svg class="ali_icon" aria-hidden="true">
-                        <use th:href="${#annotations.getOrDefault(menuItem, 'icon','jiewen joe-icon-zuzhijiagou')}"></use>
+                    <svg class="ali_icon" aria-hidden="true" th:if="${#annotations.getOrDefault(menuItem, 'icon', '') != ''}">
+                        <use th:href="${#annotations.getOrDefault(menuItem, 'icon', '')}"></use>
                     </svg>
                 </th:block>
                 <span th:text="${menuItem.status.displayName}"></span>
